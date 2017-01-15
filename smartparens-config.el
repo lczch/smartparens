@@ -114,6 +114,7 @@
 (eval-after-load 'racket-mode '(require 'smartparens-racket))
 (eval-after-load 'ess '(require 'smartparens-ess))
 (eval-after-load 'tuareg '(require 'smartparens-ocaml))
+(eval-after-load 'elixir-mode'(require 'smartparens-elixir))
 
 (provide 'smartparens-config)
 
