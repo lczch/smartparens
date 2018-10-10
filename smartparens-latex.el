@@ -121,12 +121,12 @@ This predicate is only tested on \"insert\" action."
                  latex-mode
                  LaTeX-mode
                  )
-  (sp-local-pair "`" "'"
-                 :actions '(:rem autoskip)
-                 :skip-match 'sp-latex-skip-match-apostrophe
-                 :unless '(sp-latex-point-after-backslash
-                           sp-latex-point-before-word-p)
-                 :pre-handlers '(sp-latex-pre-slurp-handler))
+  ;; (sp-local-pair "`" "'"
+  ;;                :actions '(:rem autoskip)
+  ;;                :skip-match 'sp-latex-skip-match-apostrophe
+  ;;                :unless '(sp-latex-point-after-backslash
+  ;;                          sp-latex-point-before-word-p)
+  ;;                :pre-handlers '(sp-latex-pre-slurp-handler))
   ;; math modes, yay.  The :actions are provided automatically if
   ;; these pairs do not have global definitions.
   (sp-local-pair "$" "$" :pre-handlers '(sp-latex-pre-slurp-handler))
@@ -142,11 +142,11 @@ This predicate is only tested on \"insert\" action."
 
   ;; quote should insert ``'' instead of double quotes.  If we ever
   ;; need to insert ", C-q is our friend.
-  (sp-local-pair "``" "''"
-                 :trigger "\""
-                 :unless '(sp-latex-point-after-backslash)
-                 :pre-handlers '(sp-latex-pre-slurp-handler)
-                 :post-handlers '(sp-latex-skip-double-quote))
+  ;; (sp-local-pair "``" "''"
+  ;;                :trigger "\""
+  ;;                :unless '(sp-latex-point-after-backslash)
+  ;;                :pre-handlers '(sp-latex-pre-slurp-handler)
+  ;;                :post-handlers '(sp-latex-skip-double-quote))
 
   ;; add the prefix function sticking to {} pair
   (sp-local-pair "{" nil :prefix "\\\\\\(\\sw\\|\\s_\\)*")
